@@ -31,7 +31,7 @@
                         <label for="city" class="sr-only"></label>
                         <input type="text" class="form-control" id="city" placeholder="Enter a City">
                         </div>
-                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        <button id="submitbtn" type="submit" class="btn btn-primary mb-2">Submit</button>
                     </form>
                 </div>
                 <!-- row for showing search history -->
@@ -50,9 +50,61 @@
         
         <!-- container for main content on right-->
        
-        <div class="col-8 border border-light rounded">
-            <div class="container" id="main-content-container">
-                <p>CITY</p>
+        <div class="col-8">
+            <div class="container border border-dark" id="main-content-container">
+                <h2>Atlanta<span><img id="wicon" src="" alt=""></span></h2>
+                <p>Temperature: <span id="temp"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>Wind Speed: <span id="wind"></span></p>
+                <p>UV Index: <span id="uvIndex"></span></p>
+            </div> 
+            <div class="container row">
+                <h3 class="col-12">Five-Day Forcast</h3>
+                <div class="col-2">
+                    <div class="card bg-primary width-100" >
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle">Card subtitle</h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card bg-primary width-100" >
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle">Card subtitle</h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card bg-primary width-100" >
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle">Card subtitle</h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card bg-primary width-100" >
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle">Card subtitle</h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card bg-primary width-100" >
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle">Card subtitle</h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
             </div>          
        </div>
 
