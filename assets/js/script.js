@@ -1,23 +1,20 @@
-// Make varibale for the two api links
-var apiUrlFive = "http://api.openweathermap.org/data/2.5/forecast?q=London&units=imperial&apikey=b2f5c5fd56830b2ca51bd32529509771";
-var apiUrlCurrent = "http://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&apikey=b2f5c5fd56830b2ca51bd32529509771";
 var inputSubmitEl = document.querySelector("#city");
 
 
-fetch(apiUrlCurrent)
 
-.then(function(response){
-   response.json().then(function(data) {
-       console.log(data);
-   })
-})
 
 
 // Handler for currentWeather(submit button input) submit button
 var currentWeather = function(city) {
-    console.log(city);
-    // trim input
-    // fetch apiUrlCurrent
+    var apiUrlFive = "http://api.openweathermap.org/data/2.5/forecast?q=" + city +"&units=imperial&apikey=b2f5c5fd56830b2ca51bd32529509771";
+
+    fetch(apiUrlFive)
+
+    .then(function(response){
+       response.json().then(function(data) {
+           console.log(data);
+       })
+    })
     // change current weather in main area
     // call fiveDayForcast(submit button input)
 }
@@ -29,6 +26,9 @@ var currentWeather = function(city) {
 
 
 // Save cities to local storage
+var saveCity = function(city) {
+
+}
     // put cities in an array
     // set array in local
 
@@ -43,7 +43,6 @@ var currentWeather = function(city) {
 var buttonClickHandler = function(event) {
     //debugger;
     var city = event.value;
-    console.log(city);
     if (city) {
         currentWeather(city.trim());
         saveCity(city.trim());
@@ -53,4 +52,5 @@ var buttonClickHandler = function(event) {
 $("#submitbtn").on("click", function() {
     event.preventDefault();
     buttonClickHandler(inputSubmitEl);
+    inputSubmitEl.value = "";
 });
