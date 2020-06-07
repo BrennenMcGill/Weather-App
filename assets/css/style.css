@@ -10,3 +10,12 @@ li {
 .margin-left {
     margin-left: 5px;
 }
+
+.card-padding{
+    padding: 3px;
+}
+
+#five-day {
+    margin: 0;
+    padding: 0;
+}

@@ -15,9 +15,9 @@ var currentWeather = function(city) {
                  .then(function (data) {
                     $("#city-title").text(data.city.name);
                     $("#current-date").text(moment().format("MMM Do YYYY"));
-                    $("#current-temp").text(Math.round(data.list[0].main.temp) + "°");
-                    $("#current-humidity").text(Math.round(data.list[0].main.humidity));
-                    $("#current-wind").text(Math.round(data.list[0].wind.speed));
+                    $("#current-temp").text(Math.round(data.list[0].main.temp) + "°  F");
+                    $("#current-humidity").text(Math.round(data.list[0].main.humidity) + '%');
+                    $("#current-wind").text(Math.round(data.list[0].wind.speed) + "MPH");
                     //$("#current-uv-index").text(Math.floor(Math.random() * 10));
                     var iconcode = data.list[0].weather[0].icon;
                     var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
@@ -59,6 +59,40 @@ var fiveDayForcast = function(city) {
                 response.json()
                  .then(function (data) {
                     console.log(data);
+                    $("#day-1").text(moment(data.list[5].dt_txt).format("MMM Do"));
+                    $("#temp-1").text(Math.round(data.list[0].main.temp) + "° F");
+                    $("#humid-1").text(Math.round(data.list[0].main.humidity)  + '%');
+                    var iconcode = data.list[5].weather[0].icon;
+                    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                    $('#wicon-1').attr('src', iconurl);
+
+                    $("#day-2").text(moment(data.list[13].dt_txt).format("MMM Do"));
+                    $("#temp-2").text(Math.round(data.list[13].main.temp) + "° F");
+                    $("#humid-2").text(Math.round(data.list[13].main.humidity) + '%');
+                    var iconcode = data.list[13].weather[0].icon;
+                    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                    $('#wicon-2').attr('src', iconurl);
+
+                    $("#day-3").text(moment(data.list[21].dt_txt).format("MMM Do"));
+                    $("#temp-3").text(Math.round(data.list[21].main.temp) + "° F");
+                    $("#humid-3").text(Math.round(data.list[21].main.humidity) + '%');
+                    var iconcode = data.list[21].weather[0].icon;
+                    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                    $('#wicon-3').attr('src', iconurl);
+
+                    $("#day-4").text(moment(data.list[29].dt_txt).format("MMM Do"));
+                    $("#temp-4").text(Math.round(data.list[29].main.temp) + "° F");
+                    $("#humid-4").text(Math.round(data.list[29].main.humidity) + '%');
+                    var iconcode = data.list[29].weather[0].icon;
+                    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                    $('#wicon-4').attr('src', iconurl);
+
+                    $("#day-5").text(moment(data.list[37].dt_txt).format("MMM Do"));
+                    $("#temp-5").text(Math.round(data.list[37].main.temp) + "° F");
+                    $("#humid-5").text(Math.round(data.list[37].main.humidity) + '%');
+                    var iconcode = data.list[37].weather[0].icon;
+                    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                    $('#wicon-5').attr('src', iconurl);
                  })
                 }
             })
@@ -95,4 +129,14 @@ $("#submitbtn").on("click", function() {
     inputSubmitEl.value = "";
 });
 
-currentWeather("Salt Lake City");
+var localIpAddress = function() {
+    var localIp = "https://json.geoiplookup.io/";
+    fetch(localIp)
+    .then(function(response) {
+        response.json()
+            .then(function(data){
+                currentWeather(data.city);
+            })
+    })
+}
+localIpAddress();
