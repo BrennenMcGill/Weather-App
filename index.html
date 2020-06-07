@@ -52,11 +52,15 @@
        
         <div class="col-8">
             <div class="container border border-dark" id="main-content-container">
-                <h2>Atlanta<span><img id="wicon" src="" alt=""></span></h2>
-                <p>Temperature: <span id="temp"></span></p>
-                <p>Humidity: <span id="humidity"></span></p>
-                <p>Wind Speed: <span id="wind"></span></p>
-                <p>UV Index: <span id="uvIndex"></span></p>
+                <div class="row margin-left">
+                    <h2 id="city-title">Atlanta</h2> &nbsp; &nbsp; 
+                    <h2 id="current-date"></h2>
+                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+                </div>
+                <p>Temperature: <span id="current-temp"></span></p>
+                <p>Humidity: <span id="current-humidity"></span></p>
+                <p>Wind Speed: <span id="current-wind"></span></p>
+                <p>UV Index: <span id="current-uv-index"></span></p>
             </div> 
             <div class="container row">
                 <h3 class="col-12">Five-Day Forcast</h3>
@@ -109,7 +113,7 @@
        </div>
 
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
