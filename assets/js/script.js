@@ -2,7 +2,7 @@ var inputSubmitEl = document.querySelector("#city");
 
 // Handler for currentWeather(submit button input) submit button
 var currentWeather = function (city) {
-    var apiUrlFive = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&apikey=b2f5c5fd56830b2ca51bd32529509771";
+    var apiUrlFive = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&apikey=b2f5c5fd56830b2ca51bd32529509771";
     fetch(apiUrlFive)
 
         .then(function (response) {
@@ -53,7 +53,7 @@ var currentWeather = function (city) {
 
 // Handler fiveDayForcast(submit button input)
 var fiveDayForcast = function (city) {
-    var apiUrlFive = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&apikey=b2f5c5fd56830b2ca51bd32529509771";
+    var apiUrlFive = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&apikey=b2f5c5fd56830b2ca51bd32529509771";
 
     fetch(apiUrlFive)
         .then(function (response) {
