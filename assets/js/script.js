@@ -134,7 +134,7 @@ var getCityHistory = function () {
     }
 }
 
-
+// makes sentences look nice credit to https://gist.github.com/cskevint/5817477
 function titleize(sentence) {
     if (!sentence.split) return sentence;
     var _titleizeWord = function (string) {
